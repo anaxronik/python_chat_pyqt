@@ -28,7 +28,7 @@ class Connector(ClientFactory):
 
 class ChatWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     reactor = None
-    protocol: ConnectorProtocol
+    protocol: 'ConnectorProtocol'
 
     def __init__(self):
         super().__init__()
@@ -64,4 +64,4 @@ reactor.connectTCP('localhost',
                    Connector(window))
 
 window.reactor = reactor
-reactor.run
+reactor.run()
